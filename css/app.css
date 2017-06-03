@@ -1,0 +1,44 @@
+header{
+	border-style: solid;
+	border-top: thick;
+	border-color: #e62117;
+	border-width: 5.3px;
+}
+
+ul li{
+	list-style: none;
+	background: #f8f8f8;
+	margin-top: 3px;
+	border-radius: 2px;
+}
+
+li span{
+	font-weight: normal !important;
+}
+
+ul > li > i{
+	margin-right: 10px;
+	color: #e62117;
+} 
+
+.list input,
+.list input:hover,
+.list input:focus{
+	border: none;
+	background: #f8f8f8;
+}
+
+.breaker{
+	cursor: pointer;
+}
+
+.main-top-m{
+	margin-top: 2%;
+}
+
+.videogular-container {
+	width: 100%;
+	height: 320px;
+	margin: auto;
+	overflow: hidden;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>Cover Videos</title>
+	<script src="https://use.fontawesome.com/4b3e772d8b.js"></script>
+	<link href="/css/foundation.css" rel="stylesheet" type="text/css">
+	<link href="/css/app.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	<header>
+
+	</header>
+
+
+	<div class="container" ng-controller="MyCtrl">
+		<div class="row main-top-m">
+			<div class="large-8 columns">
+				<label> <b>Video URL: </b>
+					<input type="text" ng-model="videoURL" placeholder="Type youtube url here.." />
+				</label>
+			</div>
+			<div class="large-4 columns">
+				<label> <b>Load From File: </b>
+					<input type="text" ng-blur="readFile()" ng-model="filename" placeholder="Type the name of list file here.." />
+				</label>
+			</div>
+		</div>
+		<div class="row">
+			<div class="large-6 columns">
+				<youtube-video video-url="videoURL" player="mainPlayer"></youtube-video>
+			</div>
+			<div class="large-4 columns">
+				<button class="button" ng-if="videoURL" ng-click="getTime()"><i class="fa fa-pause" aria-hidden="true"></i> Break Time Here</button>
+				<button class="button" ng-if="videoURL" ng-click="saveList()"><i class="fa fa-floppy-o" aria-hidden="true"></i> Save List</button>
+				<ul class="list">
+					<li class="breaker" ng-repeat="(idx,item) in timeListURL">
+						<i ng-click="removeItem(idx)" class="fa fa-stop-circle-o" aria-hidden="true"></i> 
+						<i ng-click="setTimeTo(item.time)" class="fa fa-play-circle" aria-hidden="true"></i> 
+						<input ng-model="timeListURL[idx].tag" />
+					</li>
+				</ul>
+			</div>
+		</div>
+
+
+		<footer>
+		</footer>
+
+		<script src="/js/vendor/jquery.js"></script>
+		<script src="/js/vendor/what-input.js"></script>
+		<script src="/js/vendor/foundation.js"></script>
+
+		<script src="bower_components/angular/angular.min.js"></script>
+		<script src="https://www.youtube.com/iframe_api"></script>
+		<script src="/bower_components/angular-youtube-mb/dist/angular-youtube-embed.min.js"></script>
+
+		<script src="js/app.js"></script>
+
+	</body>
+	</html>
